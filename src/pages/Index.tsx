@@ -5,7 +5,6 @@ import PromotionSlider from "@/components/PromotionSlider";
 import CategoryNavigation from "@/components/CategoryNavigation";
 import MenuSection from "@/components/MenuSection";
 import Footer from "@/components/Footer";
-import MobileDeliveryToggle from "@/components/MobileDeliveryToggle";
 import MenuItemModal from "@/components/MenuItemModal";
 import {
   promotions,
@@ -58,12 +57,6 @@ const Index = () => {
       <main className="flex-grow">
         {/* Hero Slider */}
         <PromotionSlider promotions={promotions} />
-
-        {/* Мобильный переключатель доставки под слайдером */}
-        <MobileDeliveryToggle
-          isDelivery={isDelivery}
-          setIsDelivery={setIsDelivery}
-        />
 
         {/* Category Navigation */}
         <CategoryNavigation

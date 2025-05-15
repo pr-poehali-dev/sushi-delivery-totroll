@@ -28,7 +28,7 @@ const Header: React.FC<HeaderProps> = ({
               РоллТут
             </h1>
 
-            {/* Delivery/Pickup toggle на десктопе */}
+            {/* Delivery/Pickup toggle только на десктопе */}
             <div className="hidden md:flex items-center space-x-2">
               <span
                 className={`text-sm ${!isDelivery ? "font-bold text-white" : "text-white/70"}`}
@@ -79,28 +79,6 @@ const Header: React.FC<HeaderProps> = ({
             </div>
           </div>
         </div>
-
-        {/* Мобильный переключатель доставки (показывается только на мобильном) */}
-        <div className="md:hidden flex justify-center mt-2">
-          <div className="flex items-center space-x-2">
-            <span
-              className={`text-sm ${!isDelivery ? "font-bold text-white" : "text-white/70"}`}
-            >
-              Самовывоз
-            </span>
-            <div className="mx-2">
-              <DeliveryToggle
-                isDelivery={isDelivery}
-                setIsDelivery={setIsDelivery}
-              />
-            </div>
-            <span
-              className={`text-sm ${isDelivery ? "font-bold text-white" : "text-white/70"}`}
-            >
-              Доставка
-            </span>
-          </div>
-        </div>
       </div>
 
       {/* Градиентная полоса для плавного перехода к контенту */}
@@ -109,6 +87,7 @@ const Header: React.FC<HeaderProps> = ({
   );
 };
 
+// Выделение переключателя в отдельный компонент для повторного использования
 export const DeliveryToggle: React.FC<{
   isDelivery: boolean;
   setIsDelivery: (value: boolean) => void;

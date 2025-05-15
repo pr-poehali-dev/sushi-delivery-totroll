@@ -100,4 +100,51 @@ export const rollsItems: MenuItem[] = [
       "Состав: Рис, нори, тигровая креветка, творожный сыр, огурец, тобико",
     weight: 240,
   },
+  {
+    id: 1011,
+    name: "Двойное Удовольствие",
+    price: 660,
+    image:
+      "https://cdn.poehali.dev/files/541554c6-c250-48e8-a591-74ce82d6bddd.jpg",
+    description:
+      "Состав: Рис, нори, лосось, угорь, творожный сыр, унаги, кунжут",
+    weight: 240,
+  },
+  {
+    id: 1012,
+    name: "Лососевый Бум",
+    price: 710,
+    image:
+      "https://cdn.poehali.dev/files/de066edf-9154-4385-aa03-be527368926c.jpg",
+    description: "Состав: Рис, нори, лосось, огурец, тобико",
+    weight: 240,
+  },
+  {
+    id: 1013,
+    name: "Лосось Терияки",
+    price: 460,
+    image:
+      "https://cdn.poehali.dev/files/1a7451ad-3197-427c-b4ef-1a4dacc31b54.jpg",
+    description:
+      "Состав: Рис, нори, жареный лосось терияки, творожный сыр, огурец, кунжут",
+    weight: 220,
+  },
+  {
+    id: 1014,
+    name: "Маки с Лососем",
+    price: 330,
+    image:
+      "https://cdn.poehali.dev/files/5524e59c-177d-4131-b9a3-94eeac099e16.jpg",
+    description: "Состав: Рис, нори, лосось",
+    weight: 100,
+  },
+  {
+    id: 1015,
+    name: "Маки с Креветкой",
+    price: 280,
+    image:
+      "https://cdn.poehali.dev/files/d205d73b-1d03-4832-8efa-b102fcdb28a2.jpg",
+    description: "Состав: Рис, нори, тигровая креветка",
+    weight: 100,
+  },
 ];
