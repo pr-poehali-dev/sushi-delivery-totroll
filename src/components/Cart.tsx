@@ -12,9 +12,13 @@ import {
 
 interface CartProps {
   isMobile?: boolean;
+  iconColor?: string;
 }
 
-const Cart: React.FC<CartProps> = ({ isMobile = false }) => {
+const Cart: React.FC<CartProps> = ({
+  isMobile = false,
+  iconColor = "#B255FF",
+}) => {
   // В реальном приложении здесь будет стейт для товаров, общей суммы и т.д.
   const [cartItems, setCartItems] = React.useState<any[]>([]);
   const cartCount = cartItems.length;
@@ -25,7 +29,7 @@ const Cart: React.FC<CartProps> = ({ isMobile = false }) => {
         <Button
           variant={isMobile ? "ghost" : "outline"}
           size={isMobile ? "sm" : "default"}
-          className="relative h-10 w-10 p-0 text-[#B255FF]"
+          className={`relative h-10 w-10 p-0 text-${iconColor === "black" ? "black" : "[#B255FF]"}`}
         >
           <Icon name="ShoppingCart" className="h-6 w-6" />
           {cartCount > 0 && (
