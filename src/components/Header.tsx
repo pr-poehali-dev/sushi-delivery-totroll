@@ -21,15 +21,16 @@ const Header: React.FC<HeaderProps> = ({
   return (
     <header className="bg-[#C177FF] shadow-md sticky top-0 z-50">
       <div className="container mx-auto px-0 py-2 sm:px-2 md:px-4 md:py-4">
-        <div className="flex items-center">
-          {/* Название бренда */}
-          <div className="flex items-center">
-            <h1 className="text-xl sm:text-2xl font-bold text-white font-cooper ml-1 sm:ml-2">
-              РоллТут
-            </h1>
+        <div className="flex flex-col items-center">
+          {/* Название бренда по центру */}
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white font-cooper mb-2 sm:mb-1">
+            РоллТут
+          </h1>
 
-            {/* Delivery/Pickup toggle - только для десктопа */}
-            <div className="hidden md:flex items-center space-x-1 ml-4">
+          {/* Нижняя часть шапки с контактами и корзиной */}
+          <div className="w-full flex items-center justify-between mt-1">
+            {/* Delivery/Pickup toggle */}
+            <div className="flex items-center space-x-1">
               <span
                 className={`text-sm ${!isDelivery ? "font-bold text-white" : "text-white/70"}`}
               >
@@ -47,33 +48,33 @@ const Header: React.FC<HeaderProps> = ({
                 Доставка
               </span>
             </div>
-          </div>
 
-          {/* Распорка */}
-          <div className="flex-grow"></div>
+            {/* Распорка */}
+            <div className="flex-grow"></div>
 
-          {/* Contact Info - сдвинуты вправо к корзине */}
-          <div className="hidden md:flex flex-col items-end mr-3">
-            <p className="text-white text-sm">
-              п. Лазаревское, ул. Лазарева 17Б
-            </p>
-            <p className="text-lg font-bold text-white">+7 (918) 634-84-84</p>
-          </div>
+            {/* Contact Info */}
+            <div className="hidden md:flex flex-col items-end mr-3">
+              <p className="text-white text-sm">
+                п. Лазаревское, ул. Лазарева 17Б
+              </p>
+              <p className="text-lg font-bold text-white">+7 (918) 634-84-84</p>
+            </div>
 
-          {/* Cart - увеличен значок */}
-          <div className="flex items-center mr-2 md:mr-0">
-            <Cart isMobile={true} iconColor="white" onCheckout={onCheckout} />
-          </div>
+            {/* Cart */}
+            <div className="flex items-center mr-2 md:mr-0">
+              <Cart isMobile={true} iconColor="white" onCheckout={onCheckout} />
+            </div>
 
-          {/* Mobile Phone Button */}
-          <div className="md:hidden mr-2">
-            <Button
-              variant="ghost"
-              size="sm"
-              className="h-10 w-10 p-0 text-white"
-            >
-              <Icon name="Phone" className="h-6 w-6" />
-            </Button>
+            {/* Mobile Phone Button */}
+            <div className="md:hidden mr-2">
+              <Button
+                variant="ghost"
+                size="sm"
+                className="h-10 w-10 p-0 text-white"
+              >
+                <Icon name="Phone" className="h-6 w-6" />
+              </Button>
+            </div>
           </div>
         </div>
       </div>
