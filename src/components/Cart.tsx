@@ -9,22 +9,46 @@ import {
   SheetTrigger,
   SheetFooter,
 } from "@/components/ui/sheet";
+import { useNavigate } from "react-router-dom";
+import { useCart } from "@/hooks/use-cart";
+import { Separator } from "@/components/ui/separator";
 
 interface CartProps {
   isMobile?: boolean;
   iconColor?: string;
+  onCheckout?: () => void;
 }
 
 const Cart: React.FC<CartProps> = ({
   isMobile = false,
   iconColor = "#B255FF",
+  onCheckout,
 }) => {
-  // В реальном приложении здесь будет стейт для товаров, общей суммы и т.д.
-  const [cartItems, setCartItems] = React.useState<any[]>([]);
-  const cartCount = cartItems.length;
+  const navigate = useNavigate();
+  const {
+    items,
+    getTotalItems,
+    getTotalPrice,
+    removeFromCart,
+    updateQuantity,
+  } = useCart();
+  const cartCount = getTotalItems();
+  const cartTotal = getTotalPrice();
+
+  // Локальное состояние для управления открытием/закрытием корзины
+  const [isOpen, setIsOpen] = React.useState(false);
+
+  const handleCheckout = () => {
+    setIsOpen(false); // Закрываем корзину
+    if (onCheckout) {
+      onCheckout();
+    } else {
+      navigate("/checkout");
+    }
+  };
 
   return (
-    <Sheet>
+    <Sheet open={isOpen} onOpenChange={setIsOpen}>
       <SheetTrigger asChild>
         <Button
           variant={isMobile ? "ghost" : "outline"}
@@ -44,7 +68,7 @@ const Cart: React.FC<CartProps> = ({
           <SheetTitle className="text-[#B255FF]">Ваш заказ</SheetTitle>
         </SheetHeader>
 
-        {cartItems.length === 0 ? (
+        {items.length === 0 ? (
           <div className="flex flex-col items-center justify-center h-64">
             <Icon
               name="ShoppingCart"
@@ -56,15 +80,64 @@ const Cart: React.FC<CartProps> = ({
             </p>
           </div>
         ) : (
-          <div className="mt-6">
-            {/* Здесь будет список товаров в корзине */}
+          <div className="mt-6 flex flex-col gap-4">
+            {items.map((item) => (
+              <div key={item.id} className="flex items-center gap-3">
+                <div className="h-16 w-16 rounded overflow-hidden">
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="flex-1">
+                  <p className="font-medium">{item.name}</p>
+                  <p className="text-sm text-gray-500">{item.price} ₽</p>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="h-7 w-7 p-0"
+                    onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                  >
+                    <Icon name="Minus" className="h-3 w-3" />
+                  </Button>
+                  <span className="w-5 text-center">{item.quantity}</span>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="h-7 w-7 p-0"
+                    onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                  >
+                    <Icon name="Plus" className="h-3 w-3" />
+                  </Button>
+                </div>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="h-7 w-7 p-0 text-gray-400"
+                  onClick={() => removeFromCart(item.id)}
+                >
+                  <Icon name="Trash2" className="h-4 w-4" />
+                </Button>
+              </div>
+            ))}
+
+            <Separator className="my-2" />
+
+            <div className="flex justify-between items-center">
+              <span className="font-medium">Итого:</span>
+              <span className="font-bold text-lg">{cartTotal} ₽</span>
+            </div>
           </div>
         )}
 
         <SheetFooter className="mt-6">
           <Button
-            disabled={cartItems.length === 0}
+            disabled={items.length === 0}
             className="w-full bg-[#B255FF] hover:bg-[#B255FF]/80"
+            onClick={handleCheckout}
           >
             Оформить заказ
           </Button>

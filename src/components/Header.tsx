@@ -14,6 +14,7 @@ interface HeaderProps {
   setIsDelivery: (value: boolean) => void;
   categories: { id: string; name: string }[];
   scrollToCategory: (categoryId: string) => void;
+  onCheckout?: () => void;
 }
 
 const Header: React.FC<HeaderProps> = ({
@@ -21,6 +22,7 @@ const Header: React.FC<HeaderProps> = ({
   setIsDelivery,
   categories,
   scrollToCategory,
+  onCheckout,
 }) => {
   return (
     <header className="bg-[#FFE4B5] shadow-md sticky top-0 z-50">
@@ -89,7 +91,7 @@ const Header: React.FC<HeaderProps> = ({
 
           {/* Cart - увеличен значок */}
           <div className="flex items-center mr-2 md:mr-0">
-            <Cart isMobile={true} iconColor="black" />
+            <Cart isMobile={true} iconColor="black" onCheckout={onCheckout} />
           </div>
 
           {/* Mobile Phone Button */}

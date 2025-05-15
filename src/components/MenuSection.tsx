@@ -13,9 +13,15 @@ interface MenuSectionProps {
   id: string;
   title: string;
   items: MenuItemType[];
+  onItemClick: (id: number) => void;
 }
 
-const MenuSection: React.FC<MenuSectionProps> = ({ id, title, items }) => {
+const MenuSection: React.FC<MenuSectionProps> = ({
+  id,
+  title,
+  items,
+  onItemClick,
+}) => {
   return (
     <section id={id} className="mb-8 md:mb-12 scroll-mt-20">
       <h2 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-black border-b border-[#B255FF]/20 pb-2">
@@ -30,6 +36,7 @@ const MenuSection: React.FC<MenuSectionProps> = ({ id, title, items }) => {
             price={item.price}
             image={item.image}
             description={item.description}
+            onClick={() => onItemClick(item.id)}
           />
         ))}
       </div>

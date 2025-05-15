@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Icon from "@/components/ui/icon";
+import { useCart } from "@/hooks/use-cart";
 
 interface MenuItemProps {
   id: number;
@@ -15,6 +16,7 @@ interface MenuItemProps {
   price: number;
   image: string;
   description: string;
+  onClick?: () => void;
 }
 
 const MenuItem: React.FC<MenuItemProps> = ({
@@ -23,11 +25,20 @@ const MenuItem: React.FC<MenuItemProps> = ({
   price,
   image,
   description,
+  onClick,
 }) => {
+  const { addToCart } = useCart();
+
+  const handleAddToCart = (e: React.MouseEvent) => {
+    e.stopPropagation(); // Предотвращаем открытие модального окна при клике на кнопку
+    addToCart({ id, name, price, image, description });
+  };
+
   return (
     <Card
       key={id}
-      className="overflow-hidden hover:shadow-lg transition-shadow border-[#B255FF]/20"
+      className="overflow-hidden hover:shadow-lg transition-shadow border-[#B255FF]/20 cursor-pointer"
+      onClick={onClick}
     >
       <div className="h-32 sm:h-40 overflow-hidden">
         <img
@@ -46,7 +57,10 @@ const MenuItem: React.FC<MenuItemProps> = ({
       </CardContent>
       <CardFooter className="flex justify-between px-2 py-2 md:px-3">
         <p className="font-bold text-sm sm:text-base text-black">{price} ₽</p>
-        <Button className="h-8 px-2 text-xs bg-[#B255FF] hover:bg-[#B255FF]/80">
+        <Button
+          className="h-8 px-2 text-xs bg-[#B255FF] hover:bg-[#B255FF]/80"
+          onClick={handleAddToCart}
+        >
           В корзину
           <Icon name="ShoppingCart" className="ml-1 h-3 w-3" />
         </Button>
