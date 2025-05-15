@@ -1,5 +1,6 @@
 import { Menu } from "../types";
 import { sushiItems } from "./sushi";
+import { rollsItems } from "./rolls";
 import { setsItems } from "./sets";
 import { pizzaItems } from "./pizza";
 import { hotItems } from "./hot";
@@ -13,6 +14,7 @@ import { drinksItems } from "./drinks";
  */
 export const menuItems: Menu = {
   sushi: sushiItems,
+  rolls: rollsItems,
   sets: setsItems,
   pizza: pizzaItems,
   hot: hotItems,

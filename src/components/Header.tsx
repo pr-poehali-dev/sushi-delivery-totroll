@@ -1,10 +1,4 @@
 import React from "react";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import Icon from "@/components/ui/icon";
 import Cart from "@/components/Cart";
@@ -28,29 +22,19 @@ const Header: React.FC<HeaderProps> = ({
     <header className="bg-[#FFE4B5] shadow-md sticky top-0 z-50">
       <div className="container mx-auto px-0 py-2 sm:px-2 md:px-4 md:py-4">
         <div className="flex items-center">
-          {/* Accordion Menu - сдвинут до края экрана */}
+          {/* Убираем Accordion Menu */}
           <div className="pl-2 md:pl-0">
-            <Accordion type="single" collapsible>
-              <AccordionItem value="menu" className="border-none">
-                <AccordionTrigger className="py-1 hover:no-underline">
-                  <Icon name="Menu" className="h-6 w-6 text-black" />
-                </AccordionTrigger>
-                <AccordionContent>
-                  <ul className="py-2">
-                    {categories.map((category) => (
-                      <li key={category.id} className="py-1">
-                        <button
-                          onClick={() => scrollToCategory(category.id)}
-                          className="text-black hover:text-black/80 transition-colors"
-                        >
-                          {category.name}
-                        </button>
-                      </li>
-                    ))}
-                  </ul>
-                </AccordionContent>
-              </AccordionItem>
-            </Accordion>
+            <div className="flex space-x-2">
+              {categories.slice(0, 3).map((category) => (
+                <button
+                  key={category.id}
+                  onClick={() => scrollToCategory(category.id)}
+                  className="text-sm text-black hover:text-black/80 transition-colors py-1"
+                >
+                  {category.name}
+                </button>
+              ))}
+            </div>
           </div>
 
           {/* Название (переключатель доставки перемещен в мобильной версии) */}

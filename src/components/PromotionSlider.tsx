@@ -27,7 +27,7 @@ const PromotionSlider: React.FC<PromotionSliderProps> = ({ promotions }) => {
     stopAutoplay();
     autoplayIntervalRef.current = window.setInterval(() => {
       if (emblaApi) emblaApi.scrollNext();
-    }, 8000);
+    }, 5000); // Изменено с 8000 на 5000 (5 секунд)
   };
 
   // Остановить автопрокрутку

@@ -4,7 +4,8 @@ import { Category } from "./types";
  * Категории меню
  */
 export const categories: Category[] = [
-  { id: "sushi", name: "Суши-Роллы" },
+  { id: "sushi", name: "Суши" },
+  { id: "rolls", name: "Роллы" },
   { id: "sets", name: "Наборы" },
   { id: "pizza", name: "Пицца" },
   { id: "hot", name: "Горячее" },

@@ -47,30 +47,6 @@ export const sushiItems: MenuItem[] = [
     vegetarian: true
   },
   { 
-    id: 106, 
-    name: "Филадельфия Классическая", 
-    price: 350, 
-    image: "https://images.unsplash.com/photo-1583623025817-d180a2221d0a?q=80&w=400&auto=format&fit=crop", 
-    description: "Состав: Рис, Нори, Сливочный сыр, Лосось",
-    weight: 250
-  },
-  { 
-    id: 107, 
-    name: "Филадельфия с Огурцом", 
-    price: 370, 
-    image: "https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?q=80&w=400&auto=format&fit=crop", 
-    description: "Состав: Рис, Нори, Сливочный сыр, Лосось, Огурец",
-    weight: 260
-  },
-  { 
-    id: 108, 
-    name: "Филадельфия с Авокадо", 
-    price: 390, 
-    image: "https://images.unsplash.com/photo-1553621042-f6e147245754?q=80&w=400&auto=format&fit=crop", 
-    description: "Состав: Рис, Нори, Сливочный сыр, Лосось, Авокадо",
-    weight: 270
-  },
-  { 
     id: 109, 
     name: "Гункан Гриль Краб", 
     price: 130, 
@@ -109,5 +85,30 @@ export const sushiItems: MenuItem[] = [
     image: "https://cdn.poehali.dev/files/18c437c9-443e-49f9-ae3f-6bac7e51371e.jpg", 
     description: "Состав: Рис, Нори, Лосось, Огурец",
     weight: 55
+  },
+  { 
+    id: 114, 
+    name: "Спайси Лосось", 
+    price: 150, 
+    image: "https://cdn.poehali.dev/files/9c7ef966-ab59-42ed-8793-76613446a1ce.jpg", 
+    description: "Состав: Рис, Нори, Лосось, Спайси соус",
+    weight: 55
+  },
+  { 
+    id: 115, 
+    name: "Гункан Чука", 
+    price: 90, 
+    image: "https://cdn.poehali.dev/files/d3f84d80-e543-4b5e-8135-f6325b964680.jpg", 
+    description: "Состав: Рис, Нори, Водоросли Чука",
+    weight: 55,
+    vegetarian: true
+  },
+  { 
+    id: 116, 
+    name: "Гункан Тобико", 
+    price: 120, 
+    image: "https://cdn.poehali.dev/files/a24df86d-623b-4ded-8a9c-f368d2906c55.jpg", 
+    description: "Состав: Рис, Нори, Икра тобико",
+    weight: 50
   }
 ];
