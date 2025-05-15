@@ -1,11 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselPrevious,
-  CarouselNext,
-} from "@/components/ui/carousel";
+import React, { useEffect, useRef } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 
 interface Promotion {
@@ -78,8 +71,9 @@ const PromotionSlider: React.FC<PromotionSliderProps> = ({ promotions }) => {
             ))}
           </div>
         </div>
+        {/* Стрелки скрыты для мобильной версии */}
         <button
-          className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white/75 rounded-full p-1 z-10 shadow-md"
+          className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white/75 rounded-full p-1 z-10 shadow-md opacity-0 md:opacity-100"
           onClick={() => emblaApi?.scrollPrev()}
         >
           <span className="sr-only">Предыдущий слайд</span>
@@ -98,7 +92,7 @@ const PromotionSlider: React.FC<PromotionSliderProps> = ({ promotions }) => {
           </svg>
         </button>
         <button
-          className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white/75 rounded-full p-1 z-10 shadow-md"
+          className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white/75 rounded-full p-1 z-10 shadow-md opacity-0 md:opacity-100"
           onClick={() => emblaApi?.scrollNext()}
         >
           <span className="sr-only">Следующий слайд</span>

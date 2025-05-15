@@ -3,10 +3,10 @@ import { useNavigate } from "react-router-dom";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { useCart } from "@/hooks/use-cart";
-import Icon from "@/components/ui/icon";
 import EmptyCartMessage from "@/components/checkout/EmptyCartMessage";
 import CheckoutForm from "@/components/checkout/CheckoutForm";
 import OrderSummary from "@/components/checkout/OrderSummary";
+import Icon from "@/components/ui/icon";
 
 const Checkout = () => {
   const navigate = useNavigate();
@@ -60,7 +60,7 @@ const Checkout = () => {
           className="flex items-center gap-2"
         >
           <Icon name="ArrowLeft" className="h-4 w-4" />
-          Назад в меню
+          <span>Назад в меню</span>
         </Button>
       </div>
 

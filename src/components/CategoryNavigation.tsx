@@ -62,13 +62,13 @@ const CategoryNavigation: React.FC<CategoryNavigationProps> = ({
             )}
           </div>
 
-          {/* Категории */}
+          {/* Категории - кнопки увеличены для мобильной версии */}
           <div className="flex overflow-x-auto py-2 space-x-2 sm:space-x-4 no-scrollbar flex-grow">
             {categories.map((category) => (
               <button
                 key={category.id}
                 onClick={() => scrollToCategory(category.id)}
-                className={`px-3 py-1.5 sm:px-4 sm:py-2 whitespace-nowrap rounded-full transition-colors text-sm sm:text-base font-semibold ${
+                className={`px-4 py-2.5 sm:px-4 sm:py-2 whitespace-nowrap rounded-full transition-colors text-sm sm:text-base font-semibold ${
                   activeCategory === category.id
                     ? "bg-[#B255FF] text-white"
                     : "bg-white text-black hover:bg-[#B255FF]/10"

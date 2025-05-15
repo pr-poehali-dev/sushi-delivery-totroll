@@ -147,4 +147,52 @@ export const rollsItems: MenuItem[] = [
     description: "Состав: Рис, нори, тигровая креветка",
     weight: 100,
   },
+  {
+    id: 1016,
+    name: "Маки с Огурцом",
+    price: 180,
+    image:
+      "https://cdn.poehali.dev/files/a946b1e8-dab0-47ca-9c1c-713f1e89dfb3.jpg",
+    description: "Состав: Рис, нори, огурец",
+    weight: 100,
+    vegetarian: true,
+  },
+  {
+    id: 1017,
+    name: "Маки с Крабом",
+    price: 230,
+    image:
+      "https://cdn.poehali.dev/files/56da8c94-7158-4294-8606-412d4f3ddc5b.jpg",
+    description: "Состав: Рис, нори, краб микс",
+    weight: 100,
+  },
+  {
+    id: 1018,
+    name: "Маки с Угрём",
+    price: 280,
+    image:
+      "https://cdn.poehali.dev/files/58648c53-72fb-465c-ae6e-326afba64841.jpg",
+    description: "Состав: Рис, нори, угорь, унаги, кунжут",
+    weight: 100,
+  },
+  {
+    id: 1019,
+    name: "Маки с Авокадо",
+    price: 200,
+    image:
+      "https://cdn.poehali.dev/files/f1dea82c-caf4-4cff-9b18-8834e7c95e66.jpg",
+    description: "Состав: Рис, нори, авокадо",
+    weight: 100,
+    vegetarian: true,
+  },
+  {
+    id: 1020,
+    name: "Запечённая Парочка",
+    price: 480,
+    image:
+      "https://cdn.poehali.dev/files/98aeb368-2672-4c69-8468-30ce421a10f4.jpg",
+    description:
+      "Состав: Рис, нори, тигровая креветка, кальмар, творожный сыр, огурец, соус для запекания, Тобико, Кунжут, Спайси соус, Унаги",
+    weight: 240,
+  },
 ];
