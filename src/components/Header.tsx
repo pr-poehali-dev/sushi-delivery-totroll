@@ -25,7 +25,7 @@ const Header: React.FC<HeaderProps> = ({
   scrollToCategory,
 }) => {
   return (
-    <header className="bg-[#ADFF2F] shadow-md sticky top-0 z-50">
+    <header className="bg-[#F0E68C] shadow-md sticky top-0 z-50">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Accordion Menu */}
@@ -53,10 +53,10 @@ const Header: React.FC<HeaderProps> = ({
             </Accordion>
           </div>
 
-          {/* Logo */}
+          {/* Logo и название */}
           <div className="flex items-center flex-grow md:flex-grow-0">
-            <Logo className="mr-2" />
-            <h1 className="text-2xl font-bold text-purple-800 mr-2">РоллТут</h1>
+            <Logo className="mr-3" />
+            <h1 className="text-2xl font-bold text-purple-800">РоллТут</h1>
 
             {/* Delivery/Pickup toggle */}
             <div className="flex items-center space-x-2 ml-4">
