@@ -27,26 +27,30 @@ const MenuItem: React.FC<MenuItemProps> = ({
   return (
     <Card
       key={id}
-      className="overflow-hidden hover:shadow-lg transition-shadow border-purple-200"
+      className="overflow-hidden hover:shadow-lg transition-shadow border-[#B255FF]/20"
     >
-      <div className="h-48 overflow-hidden">
+      <div className="h-32 sm:h-40 overflow-hidden">
         <img
           src={image}
           alt={name}
           className="w-full h-full object-cover transition-transform hover:scale-105 duration-300"
         />
       </div>
-      <CardContent className="pt-4">
-        <CardTitle className="text-xl text-purple-900">{name}</CardTitle>
-        <CardDescription className="mt-2 h-10 text-purple-700">
+      <CardContent className="pt-2 pb-1 px-2 md:pt-3 md:px-3">
+        <CardTitle className="text-base sm:text-lg text-[#B255FF]">
+          {name}
+        </CardTitle>
+        <CardDescription className="mt-1 text-xs sm:text-sm h-8 line-clamp-2 text-[#B255FF]/70">
           {description}
         </CardDescription>
       </CardContent>
-      <CardFooter className="flex justify-between">
-        <p className="font-bold text-lg text-purple-700">{price} ₽</p>
-        <Button className="bg-purple-600 hover:bg-purple-700">
+      <CardFooter className="flex justify-between px-2 py-2 md:px-3">
+        <p className="font-bold text-sm sm:text-base text-[#B255FF]">
+          {price} ₽
+        </p>
+        <Button className="h-8 px-2 text-xs bg-[#B255FF] hover:bg-[#B255FF]/80">
           В корзину
-          <Icon name="ShoppingCart" className="ml-2 h-4 w-4" />
+          <Icon name="ShoppingCart" className="ml-1 h-3 w-3" />
         </Button>
       </CardFooter>
     </Card>
