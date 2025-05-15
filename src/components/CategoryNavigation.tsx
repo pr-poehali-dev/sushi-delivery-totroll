@@ -54,7 +54,7 @@ const CategoryNavigation: React.FC<CategoryNavigationProps> = ({
               <Button
                 variant="ghost"
                 size="icon"
-                className="h-10 w-10 text-[#B255FF]"
+                className="h-10 w-10 text-black"
                 onClick={() => setShowSearch(true)}
               >
                 <Icon name="Search" className="h-5 w-5" />
@@ -71,7 +71,7 @@ const CategoryNavigation: React.FC<CategoryNavigationProps> = ({
                 className={`px-3 py-1.5 sm:px-4 sm:py-2 whitespace-nowrap rounded-full transition-colors text-sm sm:text-base font-semibold ${
                   activeCategory === category.id
                     ? "bg-[#B255FF] text-white"
-                    : "bg-white text-[#B255FF] hover:bg-[#B255FF]/10"
+                    : "bg-white text-black hover:bg-[#B255FF]/10"
                 }`}
               >
                 {category.name}
