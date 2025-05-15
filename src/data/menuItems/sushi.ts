@@ -2,33 +2,48 @@
 import { MenuItem } from '../types';
 
 /**
- * Блюда категории "Суши-Роллы"
+ * Блюда категории "Суши"
  */
 export const sushiItems: MenuItem[] = [
   { 
-    id: 1, 
-    name: "Филадельфия", 
-    price: 670, 
-    image: "https://cdn.poehali.dev/files/fcdbc0d0-f143-40ab-bb61-2ee92799df15.jpg", 
-    description: "Нежный и сытный ролл с лососем, сливочным сыром и огурцом",
-    weight: 250,
-    tags: ["popular", "bestseller"]
+    id: 101, 
+    name: "Суши Лосось", 
+    price: 140, 
+    image: "https://cdn.poehali.dev/files/5c9cf1d9-84fe-42b8-bd3e-ef76a60374f6.jpg", 
+    description: "Состав: Рис, Лосось",
+    weight: 45
   },
   { 
-    id: 2, 
-    name: "Фила Эби", 
-    price: 670, 
-    image: "https://cdn.poehali.dev/files/339b33ff-642f-4454-aa94-ab3a96052dae.jpg", 
-    description: "Нежное сочетание креветки и творожного сыра",
-    weight: 240
+    id: 102, 
+    name: "Суши Креветка", 
+    price: 150, 
+    image: "https://cdn.poehali.dev/files/cb44d24d-c970-4fa8-a695-da1dce564d63.jpg", 
+    description: "Состав: Рис, Тигровая креветка",
+    weight: 45
   },
   { 
-    id: 3, 
-    name: "Фила Премиум", 
-    price: 770, 
-    image: "https://cdn.poehali.dev/files/f2e08ecc-8fc8-4f21-81ef-526a60ebda01.jpg", 
-    description: "Элегантное соединение авокадо и сыра",
-    weight: 260,
-    tags: ["premium"]
+    id: 103, 
+    name: "Суши Угорь", 
+    price: 180, 
+    image: "https://cdn.poehali.dev/files/47846c71-6271-485e-b389-d5f6d342870b.jpg", 
+    description: "Состав: Рис, Угорь",
+    weight: 45
+  },
+  { 
+    id: 104, 
+    name: "Суши Тунец", 
+    price: 130, 
+    image: "https://cdn.poehali.dev/files/c19eaa41-625d-4f78-922c-618c5b5e3ea7.jpg", 
+    description: "Состав: Рис, Тунец",
+    weight: 45
+  },
+  { 
+    id: 105, 
+    name: "Суши Авокадо", 
+    price: 120, 
+    image: "https://cdn.poehali.dev/files/2e724f63-56d5-4e87-b9b6-10ab989bcfe9.jpg", 
+    description: "Состав: Рис, Авокадо",
+    weight: 45,
+    vegetarian: true
   }
 ];
