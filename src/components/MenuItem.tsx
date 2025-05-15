@@ -27,9 +27,9 @@ const MenuItem: React.FC<MenuItemProps> = ({
   return (
     <Card
       key={id}
-      className="overflow-hidden hover:shadow-lg transition-shadow border-accent"
+      className="overflow-hidden hover:shadow-lg transition-shadow border-purple-200"
     >
-      <div className="h-40 overflow-hidden">
+      <div className="h-48 overflow-hidden">
         <img
           src={image}
           alt={name}
@@ -37,16 +37,16 @@ const MenuItem: React.FC<MenuItemProps> = ({
         />
       </div>
       <CardContent className="pt-4">
-        <CardTitle className="text-lg text-primary">{name}</CardTitle>
-        <CardDescription className="mt-1 h-8 text-xs line-clamp-2">
+        <CardTitle className="text-xl text-purple-900">{name}</CardTitle>
+        <CardDescription className="mt-2 h-10 text-purple-700">
           {description}
         </CardDescription>
       </CardContent>
-      <CardFooter className="flex justify-between pt-0">
-        <p className="font-bold text-primary">{price} ₽</p>
-        <Button className="bg-primary hover:bg-primary/90 py-1 px-3 h-8 text-xs">
+      <CardFooter className="flex justify-between">
+        <p className="font-bold text-lg text-purple-700">{price} ₽</p>
+        <Button className="bg-purple-600 hover:bg-purple-700">
           В корзину
-          <Icon name="ShoppingCart" className="ml-1 h-3 w-3" />
+          <Icon name="ShoppingCart" className="ml-2 h-4 w-4" />
         </Button>
       </CardFooter>
     </Card>

@@ -1,132 +1,83 @@
 import React from "react";
 import Icon from "@/components/ui/icon";
-import { Separator } from "@/components/ui/separator";
+import Logo from "@/components/ui/Logo";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-gray-800 text-white py-8">
+    <footer className="bg-purple-900 text-white py-8">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <h3 className="text-xl font-bold mb-4 text-primary">РоллТут</h3>
-            <p className="text-gray-300">Доставка вкусных суши и роллов</p>
-            <p className="mt-2 text-gray-300">г. Москва, ул. Суши, д. 42</p>
-            <p className="mt-2 text-gray-300">+7 (999) 123-45-67</p>
-            <p className="mt-2 text-gray-300">rolltut@example.com</p>
+            <div className="flex items-center mb-4">
+              <Logo className="mr-2" />
+              <h3 className="text-xl font-bold">РоллТут</h3>
+            </div>
+            <p className="text-purple-200">Доставка вкусных суши и роллов</p>
+            <p className="mt-2 text-purple-200">г. Москва, ул. Суши, д. 42</p>
+            <p className="mt-2 text-purple-200">+7 (999) 123-45-67</p>
+            <p className="mt-2 text-purple-200">rolltut@sushi.ru</p>
           </div>
-
           <div>
-            <h3 className="text-xl font-bold mb-4 text-primary">Доставка</h3>
-            <p className="text-gray-300">Ежедневно: 10:00 - 23:00</p>
-            <p className="mt-2 text-gray-300">Без выходных</p>
-            <p className="mt-2 text-gray-300">Минимальный заказ: 600 ₽</p>
-            <p className="mt-2 text-gray-300">Доставка от 1000 ₽: бесплатно</p>
-            <p className="mt-2 text-gray-300">Зона доставки: 5 км</p>
+            <h3 className="text-xl font-bold mb-4">Время работы</h3>
+            <p className="text-purple-200">Ежедневно: 10:00 - 23:00</p>
+            <p className="mt-2 text-purple-200">Без выходных</p>
+            <h3 className="text-xl font-bold mb-2 mt-6">Способы оплаты</h3>
+            <div className="flex space-x-3">
+              <div className="bg-white text-purple-900 p-1 rounded">
+                <Icon name="CreditCard" className="h-5 w-5" />
+              </div>
+              <div className="bg-white text-purple-900 p-1 rounded">
+                <Icon name="Wallet" className="h-5 w-5" />
+              </div>
+              <div className="bg-white text-purple-900 p-1 rounded">
+                <Icon name="Smartphone" className="h-5 w-5" />
+              </div>
+            </div>
           </div>
-
           <div>
-            <h3 className="text-xl font-bold mb-4 text-primary">Информация</h3>
-            <ul className="space-y-2">
-              <li>
-                <a href="#" className="text-gray-300 hover:text-primary">
-                  О нас
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-300 hover:text-primary">
-                  Правовая информация
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-300 hover:text-primary">
-                  Политика конфиденциальности
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-300 hover:text-primary">
-                  Контакты
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-300 hover:text-primary">
-                  Вакансии
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-xl font-bold mb-4 text-primary">
-              Мы в соцсетях
-            </h3>
-            <div className="flex space-x-4 mb-4">
+            <h3 className="text-xl font-bold mb-4">Мы в соцсетях</h3>
+            <div className="flex space-x-4 mb-6">
               <a
                 href="#"
-                className="text-white hover:text-primary"
-                aria-label="Instagram"
+                className="text-white hover:text-[#ADFF2F] transition-colors"
               >
                 <Icon name="Instagram" />
               </a>
               <a
                 href="#"
-                className="text-white hover:text-primary"
-                aria-label="Facebook"
+                className="text-white hover:text-[#ADFF2F] transition-colors"
               >
                 <Icon name="Facebook" />
               </a>
               <a
                 href="#"
-                className="text-white hover:text-primary"
-                aria-label="Twitter"
+                className="text-white hover:text-[#ADFF2F] transition-colors"
               >
                 <Icon name="Twitter" />
               </a>
               <a
                 href="#"
-                className="text-white hover:text-primary"
-                aria-label="Youtube"
+                className="text-white hover:text-[#ADFF2F] transition-colors"
               >
                 <Icon name="Youtube" />
               </a>
               <a
                 href="#"
-                className="text-white hover:text-primary"
-                aria-label="Telegram"
+                className="text-white hover:text-[#ADFF2F] transition-colors"
               >
-                <Icon name="Send" />
+                <Icon name="MessageCircle" />
               </a>
             </div>
-
-            <h3 className="text-xl font-bold mb-3 mt-6 text-primary">
-              Способы оплаты
-            </h3>
-            <div className="flex flex-wrap gap-2">
-              <div className="bg-white p-1 rounded w-12 h-8 flex items-center justify-center">
-                <Icon name="CreditCard" className="text-gray-800" />
-              </div>
-              <div className="bg-white p-1 rounded w-12 h-8 flex items-center justify-center">
-                <span className="text-black font-bold text-xs">VISA</span>
-              </div>
-              <div className="bg-white p-1 rounded w-12 h-8 flex items-center justify-center">
-                <span className="text-black font-bold text-xs">MC</span>
-              </div>
-              <div className="bg-white p-1 rounded w-12 h-8 flex items-center justify-center">
-                <span className="text-black font-bold text-xs">МИР</span>
-              </div>
-              <div className="bg-white p-1 rounded w-12 h-8 flex items-center justify-center">
-                <Icon name="Wallet" className="text-gray-800" />
-              </div>
-            </div>
+            <h3 className="text-xl font-bold mb-2">Зона доставки</h3>
+            <p className="text-purple-200">Вся Москва в пределах МКАД</p>
+            <p className="text-purple-200 mt-1">
+              Доставка от 1000₽ — бесплатно
+            </p>
+            <p className="text-purple-200 mt-1">До 1000₽ — 250₽</p>
           </div>
         </div>
-
-        <Separator className="my-6 bg-gray-700" />
-
-        <div className="text-center text-gray-400">
+        <div className="mt-8 pt-6 border-t border-purple-700 text-center text-purple-300">
           <p>© 2025 РоллТут. Все права защищены.</p>
-          <p className="mt-2 text-sm">
-            Изображения блюд на сайте могут отличаться от блюд в заказе
-          </p>
         </div>
       </div>
     </footer>
