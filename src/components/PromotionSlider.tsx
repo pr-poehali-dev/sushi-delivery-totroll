@@ -1,11 +1,10 @@
-
 import React from "react";
-import { 
-  Carousel, 
-  CarouselContent, 
-  CarouselItem, 
-  CarouselPrevious, 
-  CarouselNext 
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselPrevious,
+  CarouselNext,
 } from "@/components/ui/carousel";
 
 interface Promotion {
@@ -20,19 +19,19 @@ interface PromotionSliderProps {
 
 const PromotionSlider: React.FC<PromotionSliderProps> = ({ promotions }) => {
   return (
-    <section className="mb-8">
+    <section className="mb-6">
       <Carousel className="w-full">
         <CarouselContent>
           {promotions.map((promo) => (
             <CarouselItem key={promo.id}>
-              <div className="relative h-64 md:h-96 w-full overflow-hidden rounded-md">
-                <img 
-                  src={promo.image} 
-                  alt={`Акция ${promo.id}`} 
+              <div className="relative h-48 md:h-72 w-full overflow-hidden rounded-md">
+                <img
+                  src={promo.image}
+                  alt={`Акция ${promo.id}`}
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-center justify-center p-6">
-                  <h3 className="text-white text-xl md:text-3xl font-bold text-center drop-shadow-lg">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-center justify-center p-4 md:p-6">
+                  <h3 className="text-white text-lg md:text-2xl lg:text-3xl font-bold text-center drop-shadow-lg">
                     {promo.text}
                   </h3>
                 </div>
@@ -40,8 +39,8 @@ const PromotionSlider: React.FC<PromotionSliderProps> = ({ promotions }) => {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className="left-2" />
-        <CarouselNext className="right-2" />
+        <CarouselPrevious className="left-2 h-8 w-8" />
+        <CarouselNext className="right-2 h-8 w-8" />
       </Carousel>
     </section>
   );

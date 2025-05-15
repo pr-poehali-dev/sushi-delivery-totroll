@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "@/components/Header";
 import PromotionSlider from "@/components/PromotionSlider";
 import CategoryNavigation from "@/components/CategoryNavigation";
@@ -6,11 +6,11 @@ import MenuSection from "@/components/MenuSection";
 import Footer from "@/components/Footer";
 import { promotions, categories, menuItems } from "@/data/menuData";
 
-const Index: React.FC = () => {
+const Index = () => {
   const [isDelivery, setIsDelivery] = useState(true);
   const [activeCategory, setActiveCategory] = useState("sushi");
 
-  const scrollToCategory = (categoryId: string) => {
+  const scrollToCategory = (categoryId) => {
     setActiveCategory(categoryId);
     const element = document.getElementById(categoryId);
     if (element) {
