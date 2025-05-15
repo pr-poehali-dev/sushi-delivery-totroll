@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -21,7 +20,9 @@ interface FormData {
 interface CheckoutFormProps {
   formData: FormData;
   isSubmitting: boolean;
-  onInputChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
+  onInputChange: (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => void;
   onPaymentMethodChange: (value: string) => void;
   onSubmit: (e: React.FormEvent) => void;
 }
@@ -31,7 +32,7 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({
   isSubmitting,
   onInputChange,
   onPaymentMethodChange,
-  onSubmit
+  onSubmit,
 }) => {
   const { isDelivery } = useDeliveryMode();
 
@@ -96,21 +97,21 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({
           <Textarea
             id="comment"
             name="comment"
-            placeholder="Особые пожелания, промокод"
+            placeholder="*При аллергии на ингредиенты — укажите это в комментарии к заказу."
             value={formData.comment}
             onChange={onInputChange}
           />
         </div>
 
-        <PaymentMethodSelector 
-          value={formData.paymentMethod} 
-          onChange={onPaymentMethodChange} 
+        <PaymentMethodSelector
+          value={formData.paymentMethod}
+          onChange={onPaymentMethodChange}
         />
       </div>
 
       <Button
         type="submit"
-        className="mt-6 w-full bg-[#B255FF] hover:bg-[#B255FF]/80"
+        className="mt-6 w-full bg-[#C177FF] hover:bg-[#C177FF]/80"
         disabled={isSubmitting}
       >
         {isSubmitting ? (

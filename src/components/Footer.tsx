@@ -16,9 +16,9 @@ const Footer: React.FC = () => {
               Доставка вкусных суши и роллов
             </p>
             <p className="mt-2 text-white/90 text-sm">
-              г. Москва, ул. Суши, д. 42
+              п. Лазаревское, ул. Лазарева 17Б
             </p>
-            <p className="mt-1 text-white/90 text-sm">+7 (999) 123-45-67</p>
+            <p className="mt-1 text-white/90 text-sm">+7 (918) 634-84-84</p>
             <p className="mt-1 text-white/90 text-sm">rolltut@sushi.ru</p>
           </div>
           <div>
