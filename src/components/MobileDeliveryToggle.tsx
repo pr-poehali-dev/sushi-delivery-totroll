@@ -11,7 +11,7 @@ const MobileDeliveryToggle: React.FC<MobileDeliveryToggleProps> = ({
   setIsDelivery,
 }) => {
   return (
-    <div className="md:hidden bg-[#C177FF]/20 py-2 border-t border-b border-[#C177FF]/30 mb-4">
+    <div className="md:hidden bg-gradient-to-b from-[#B255FF]/10 to-transparent py-2 mb-4">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-center">
           <span
