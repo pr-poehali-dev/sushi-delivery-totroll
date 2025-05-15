@@ -27,24 +27,24 @@ const MenuItem: React.FC<MenuItemProps> = ({
   return (
     <Card
       key={id}
-      className="overflow-hidden hover:shadow-lg transition-shadow"
+      className="overflow-hidden hover:shadow-lg transition-shadow border-accent"
     >
-      <div className="h-36 md:h-40 overflow-hidden">
+      <div className="h-40 overflow-hidden">
         <img
           src={image}
           alt={name}
           className="w-full h-full object-cover transition-transform hover:scale-105 duration-300"
         />
       </div>
-      <CardContent className="pt-3 pb-1">
-        <CardTitle className="text-base md:text-lg">{name}</CardTitle>
-        <CardDescription className="mt-1 h-8 text-xs overflow-hidden">
+      <CardContent className="pt-4">
+        <CardTitle className="text-lg text-primary">{name}</CardTitle>
+        <CardDescription className="mt-1 h-8 text-xs line-clamp-2">
           {description}
         </CardDescription>
       </CardContent>
       <CardFooter className="flex justify-between pt-0">
-        <p className="font-bold text-sm md:text-base text-red-600">{price} ₽</p>
-        <Button size="sm" className="bg-red-600 hover:bg-red-700 text-xs">
+        <p className="font-bold text-primary">{price} ₽</p>
+        <Button className="bg-primary hover:bg-primary/90 py-1 px-3 h-8 text-xs">
           В корзину
           <Icon name="ShoppingCart" className="ml-1 h-3 w-3" />
         </Button>

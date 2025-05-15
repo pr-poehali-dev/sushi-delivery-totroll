@@ -25,15 +25,15 @@ const Header: React.FC<HeaderProps> = ({
   scrollToCategory,
 }) => {
   return (
-    <header className="bg-white shadow-md sticky top-0 z-50">
-      <div className="container mx-auto px-4 py-3">
+    <header className="bg-secondary shadow-md sticky top-0 z-50">
+      <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Accordion Menu */}
-          <div className="md:block mr-2">
+          <div className="md:block mr-4">
             <Accordion type="single" collapsible>
               <AccordionItem value="menu">
                 <AccordionTrigger className="py-1">
-                  <Icon name="Menu" className="h-5 w-5" />
+                  <Icon name="Menu" className="h-6 w-6" />
                 </AccordionTrigger>
                 <AccordionContent>
                   <ul className="py-2">
@@ -41,7 +41,7 @@ const Header: React.FC<HeaderProps> = ({
                       <li key={category.id} className="py-1">
                         <button
                           onClick={() => scrollToCategory(category.id)}
-                          className="text-gray-700 hover:text-red-600 transition-colors"
+                          className="text-gray-700 hover:text-primary transition-colors"
                         >
                           {category.name}
                         </button>
@@ -53,46 +53,40 @@ const Header: React.FC<HeaderProps> = ({
             </Accordion>
           </div>
 
-          {/* Logo and Brand Name */}
+          {/* Logo */}
           <div className="flex items-center flex-grow md:flex-grow-0">
             <Logo />
-            <h1 className="text-xl md:text-2xl font-bold text-red-600 mr-2">
-              ТотРолл
-            </h1>
+            <h1 className="text-2xl font-bold text-primary mr-2">РоллТут</h1>
 
             {/* Delivery/Pickup toggle */}
-            <div className="flex items-center space-x-1 ml-2 md:ml-4">
-              <span
-                className={`text-xs md:text-sm ${!isDelivery ? "font-bold" : ""}`}
-              >
+            <div className="flex items-center space-x-2 ml-4">
+              <span className={`text-sm ${!isDelivery ? "font-bold" : ""}`}>
                 Самовывоз
               </span>
               <Switch checked={isDelivery} onCheckedChange={setIsDelivery} />
-              <span
-                className={`text-xs md:text-sm ${isDelivery ? "font-bold" : ""}`}
-              >
+              <span className={`text-sm ${isDelivery ? "font-bold" : ""}`}>
                 Доставка
               </span>
             </div>
           </div>
 
           {/* Contact Info */}
-          <div className="hidden md:flex flex-col items-end mr-4">
-            <p className="text-gray-700 text-xs">г. Москва, ул. Суши, д. 42</p>
-            <p className="text-lg font-bold text-red-600">+7 (999) 123-45-67</p>
+          <div className="hidden md:flex flex-col items-end">
+            <p className="text-gray-700 text-sm">г. Москва, ул. Суши, д. 42</p>
+            <p className="text-xl font-bold text-primary">+7 (999) 123-45-67</p>
           </div>
 
-          {/* Cart Button */}
-          <div className="hidden md:block">
+          {/* Cart */}
+          <div className="hidden md:block ml-4">
             <Cart />
           </div>
 
-          {/* Mobile Buttons */}
-          <div className="flex items-center md:hidden">
-            <Button variant="ghost" size="sm" className="mr-2">
-              <Icon name="Phone" className="h-5 w-5 text-red-600" />
+          {/* Mobile Menu & Cart Button */}
+          <div className="md:hidden flex items-center space-x-2">
+            <Button variant="ghost" size="sm">
+              <Icon name="Phone" className="h-5 w-5 text-primary" />
             </Button>
-            <Cart isMobile={true} />
+            <Cart isMobile />
           </div>
         </div>
       </div>

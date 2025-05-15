@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Header from "@/components/Header";
 import PromotionSlider from "@/components/PromotionSlider";
 import CategoryNavigation from "@/components/CategoryNavigation";
@@ -9,6 +9,7 @@ import { promotions, categories, menuItems } from "@/data/menuData";
 const Index = () => {
   const [isDelivery, setIsDelivery] = useState(true);
   const [activeCategory, setActiveCategory] = useState("sushi");
+  const [searchTerm, setSearchTerm] = useState("");
 
   const scrollToCategory = (categoryId) => {
     setActiveCategory(categoryId);
@@ -19,7 +20,7 @@ const Index = () => {
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-gray-50">
+    <div className="flex flex-col min-h-screen">
       {/* Header */}
       <Header
         isDelivery={isDelivery}
