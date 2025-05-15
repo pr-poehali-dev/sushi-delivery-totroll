@@ -1,5 +1,4 @@
-
-import { Category } from './types';
+import { Category } from "./types";
 
 /**
  * Категории меню
@@ -9,11 +8,10 @@ export const categories: Category[] = [
   { id: "sets", name: "Наборы" },
   { id: "pizza", name: "Пицца" },
   { id: "hot", name: "Горячее" },
-  { id: "wok", name: "WOK" },
   { id: "salads", name: "Салаты" },
   { id: "appetizers", name: "Закуски" },
   { id: "toppings", name: "Топпинги" },
-  { id: "drinks", name: "Напитки" }
+  { id: "drinks", name: "Напитки" },
 ];
 
 /**
@@ -22,7 +20,7 @@ export const categories: Category[] = [
  * @returns Категория или undefined если не найдена
  */
 export const getCategoryById = (id: string): Category | undefined => {
-  return categories.find(category => category.id === id);
+  return categories.find((category) => category.id === id);
 };
 
 /**
@@ -32,5 +30,5 @@ export const getCategoryById = (id: string): Category | undefined => {
  */
 export const getCategoryName = (id: string): string => {
   const category = getCategoryById(id);
-  return category ? category.name : '';
+  return category ? category.name : "";
 };
