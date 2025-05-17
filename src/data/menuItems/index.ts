@@ -1,5 +1,4 @@
 import { Menu } from "../types";
-// Импортируем из нового местоположения, через файл-прокси
 import { rollsItems } from "./rolls";
 import { setsItems } from "./sets";
 import { pizzaItems } from "./pizza";
