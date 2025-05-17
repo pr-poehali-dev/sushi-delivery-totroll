@@ -1,4 +1,5 @@
 import { Menu } from "../types";
+import { sushiItems } from "./sushi";
 import { rollsItems } from "./rolls";
 import { setsItems } from "./sets";
 import { pizzaItems } from "./pizza";
@@ -7,7 +8,6 @@ import { saladsItems } from "./salads";
 import { appetizersItems } from "./appetizers";
 import { toppingsItems } from "./toppings";
 import { drinksItems } from "./drinks";
-import { sushiItems } from "./sushi";
 
 /**
  * Объединение всех категорий меню в один объект
