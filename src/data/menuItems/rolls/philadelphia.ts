@@ -3,39 +3,34 @@ import { RollItem } from "./types";
 import { INGREDIENTS as I } from "./types";
 
 /**
- * Роллы категории "Филадельфия"
+ * Роллы семейства "Филадельфия"
  */
 export const philadelphiaRolls: RollItem[] = [
   {
-    id: 1001,
-    name: "Филадельфия",
-    price: 660,
-    image: "https://cdn.poehali.dev/files/9df56186-c740-42d6-9dca-23d508b8b69e.jpg",
-    description: `Состав: ${I.RICE}, ${I.NORI}, ${I.SALMON}, ${I.CREAM_CHEESE}, ${I.CUCUMBER}`,
-    weight: 240,
-  },
-  {
     id: 1002,
-    name: "Фила Эби",
-    price: 670,
-    image: "https://cdn.poehali.dev/files/5e277c1b-3cb3-4834-ba53-02d2302749aa.jpg",
-    description: `Состав: ${I.RICE}, ${I.NORI}, ${I.SHRIMP}, ${I.SALMON}, ${I.CREAM_CHEESE}, ${I.CUCUMBER}`,
+    name: "Филадельфия с Лососем",
+    price: 490,
+    image: "https://cdn.poehali.dev/files/a232ebb0-63d1-4525-a9e9-b0c3ee53ff48.jpg",
+    description: `Состав: ${I.RICE}, ${I.NORI}, ${I.SALMON}, ${I.CREAM_CHEESE}, ${I.AVOCADO}`,
     weight: 250,
+    tags: ["bestseller", "philadelphia"],
   },
   {
     id: 1003,
-    name: "Фила микс",
-    price: 690,
-    image: "https://cdn.poehali.dev/files/2f3aef97-43a4-4aed-8f04-19a93e54e536.jpg",
-    description: `Состав: ${I.RICE}, ${I.NORI}, ${I.SHRIMP}, ${I.SALMON}, ${I.CREAM_CHEESE}, ${I.AVOCADO}, ${I.TOBIKO}`,
-    weight: 260,
+    name: "Филадельфия с Угрем",
+    price: 520,
+    image: "https://cdn.poehali.dev/files/2889afaa-6dad-42de-a221-15f9b0e83d15.jpg",
+    description: `Состав: ${I.RICE}, ${I.NORI}, ${I.EEL}, ${I.CREAM_CHEESE}, ${I.AVOCADO}, ${I.UNAGI_SAUCE}, ${I.SESAME}`,
+    weight: 250,
+    tags: ["premium", "philadelphia"],
   },
   {
     id: 1004,
-    name: "Фила Премиум",
-    price: 820,
-    image: "https://cdn.poehali.dev/files/0789fa8b-b9e5-465b-befe-2f70afe7b402.jpg",
-    description: `Состав: ${I.RICE}, ${I.NORI}, ${I.SALMON}, ${I.CREAM_CHEESE}, ${I.AVOCADO}`,
-    weight: 260,
+    name: "Филадельфия с Креветкой",
+    price: 490,
+    image: "https://cdn.poehali.dev/files/3e24ec79-a21c-42a6-aa06-aab5b618ca24.jpg",
+    description: `Состав: ${I.RICE}, ${I.NORI}, ${I.SHRIMP}, ${I.CREAM_CHEESE}, ${I.AVOCADO}`,
+    weight: 250,
+    tags: ["philadelphia"],
   },
 ];
