@@ -1,11 +1,10 @@
-
-import { RollItem, RollCategory, ROLL_CATEGORY_LABELS } from './types';
-import { philadelphiaRolls } from './philadelphia';
-import { californiaRolls } from './california';
-import { classicRolls } from './classic';
-import { makiRolls } from './maki';
-import { bakedRolls } from './baked';
-import { tempuraRolls } from './tempura';
+import { RollItem, RollCategory, ROLL_CATEGORY_LABELS } from "./types";
+import { philadelphiaRolls } from "./philadelphia";
+import { californiaRolls } from "./california";
+import { classicRolls } from "./classic";
+import { makiRolls } from "./maki";
+import { bakedRolls } from "./baked";
+import { tempuraRolls } from "./tempura";
 
 /**
  * Все роллы, сгруппированные по категории
@@ -39,7 +38,7 @@ export const getRollsByCategory = (category: RollCategory): RollItem[] => {
  * @returns Ролл или undefined если не найден
  */
 export const getRollById = (id: number): RollItem | undefined => {
-  return allRolls.find(roll => roll.id === id);
+  return allRolls.find((roll) => roll.id === id);
 };
 
 /**
@@ -48,7 +47,7 @@ export const getRollById = (id: number): RollItem | undefined => {
  * @returns Название категории
  */
 export const getRollCategoryLabel = (category: RollCategory): string => {
-  return ROLL_CATEGORY_LABELS[category] || '';
+  return ROLL_CATEGORY_LABELS[category] || "";
 };
 
 /**
@@ -59,4 +58,4 @@ export const rollsItems: RollItem[] = allRolls;
 /**
  * Экспорт констант и типов
  */
-export * from './types';
+export * from "./types";

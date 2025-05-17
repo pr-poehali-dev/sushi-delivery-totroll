@@ -1,5 +1,5 @@
 import { Menu } from "../types";
-import { rollsItems } from "./rolls"; // Импортируем роллы из папки rolls с помощью index.ts
+import { rollsItems } from "./rolls/index";
 import { setsItems } from "./sets";
 import { pizzaItems } from "./pizza";
 import { hotItems } from "./hot";
