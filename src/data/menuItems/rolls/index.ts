@@ -60,8 +60,3 @@ export const rollsItems: RollItem[] = allRolls;
  * Экспорт констант и типов
  */
 export * from './types';
-
-/**
- * Реэкспорт отдельных категорий роллов
- */
-export { philadelphiaRolls, californiaRolls, classicRolls, makiRolls, bakedRolls, tempuraRolls };
