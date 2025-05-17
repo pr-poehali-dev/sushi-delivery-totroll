@@ -1,59 +1,37 @@
+
 import React from "react";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
-import Icon from "../ui/icon";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 
 interface PaymentMethodSelectorProps {
   value: string;
-  onSelect: (value: string) => void;
+  onChange: (value: string) => void;
 }
 
-const PaymentMethodSelector: React.FC<PaymentMethodSelectorProps> = ({
-  value,
-  onSelect,
+const PaymentMethodSelector: React.FC<PaymentMethodSelectorProps> = ({ 
+  value, 
+  onChange 
 }) => {
-  const paymentMethods = [
-    {
-      id: "cash",
-      name: "Наличными курьеру",
-      icon: "Banknote",
-    },
-    {
-      id: "card",
-      name: "Картой курьеру",
-      icon: "CreditCard",
-    },
-  ];
-
   return (
-    <div className="space-y-4">
-      <div className="flex items-center">
-        <h3 className="text-lg font-medium">Способ оплаты</h3>
-      </div>
-
+    <div>
+      <Label>Способ оплаты</Label>
       <RadioGroup
         value={value}
-        onValueChange={onSelect}
-        className="grid gap-3 pt-2"
+        onValueChange={onChange}
+        className="flex flex-col space-y-2 mt-2"
       >
-        {paymentMethods.map((method) => (
-          <div
-            key={method.id}
-            className={`flex items-center space-x-3 rounded-lg border p-4 cursor-pointer hover:bg-muted/50 ${
-              value === method.id ? "border-[#B255FF] bg-[#B255FF]/5" : ""
-            }`}
-            onClick={() => onSelect(method.id)}
-          >
-            <RadioGroupItem value={method.id} id={method.id} />
-            <Icon name={method.icon} className="h-5 w-5 text-[#B255FF]" />
-            <Label
-              htmlFor={method.id}
-              className="flex-1 cursor-pointer font-normal"
-            >
-              {method.name}
-            </Label>
-          </div>
-        ))}
+        <div className="flex items-center space-x-2">
+          <RadioGroupItem value="card" id="card" />
+          <Label htmlFor="card" className="cursor-pointer">
+            Банковской картой онлайн
+          </Label>
+        </div>
+        <div className="flex items-center space-x-2">
+          <RadioGroupItem value="cash" id="cash" />
+          <Label htmlFor="cash" className="cursor-pointer">
+            Наличными при получении
+          </Label>
+        </div>
       </RadioGroup>
     </div>
   );
