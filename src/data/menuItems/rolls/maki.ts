@@ -3,36 +3,57 @@ import { RollItem } from "./types";
 import { INGREDIENTS as I } from "./types";
 
 /**
- * Маки роллы (традиционные небольшие роллы)
+ * Роллы категории "Маки"
  */
 export const makiRolls: RollItem[] = [
   {
     id: 1014,
-    name: "Сяке Маки",
-    price: 320,
-    image: "https://cdn.poehali.dev/files/60c25e0e-dfbb-40cc-866c-c891f66ce711.jpg",
+    name: "Маки с Лососем",
+    price: 330,
+    image: "https://cdn.poehali.dev/files/5524e59c-177d-4131-b9a3-94eeac099e16.jpg",
     description: `Состав: ${I.RICE}, ${I.NORI}, ${I.SALMON}`,
-    weight: 110,
-    tags: ["maki", "classic"],
+    weight: 100,
   },
   {
     id: 1015,
-    name: "Каппа Маки",
-    price: 260,
-    image: "https://cdn.poehali.dev/files/aff48498-e2d2-4992-a52e-1e08f1d76c45.jpg",
-    description: `Состав: ${I.RICE}, ${I.NORI}, ${I.CUCUMBER}`,
-    weight: 110,
-    vegetarian: true,
-    tags: ["maki", "vegetarian"],
+    name: "Маки с Креветкой",
+    price: 280,
+    image: "https://cdn.poehali.dev/files/d205d73b-1d03-4832-8efa-b102fcdb28a2.jpg",
+    description: `Состав: ${I.RICE}, ${I.NORI}, ${I.SHRIMP}`,
+    weight: 100,
   },
   {
     id: 1016,
-    name: "Авокадо Маки",
-    price: 280,
-    image: "https://cdn.poehali.dev/files/8bc4b45d-38a6-422c-b290-e2cd5b7f7ca9.jpg",
-    description: `Состав: ${I.RICE}, ${I.NORI}, ${I.AVOCADO}`,
-    weight: 110,
+    name: "Маки с Огурцом",
+    price: 180,
+    image: "https://cdn.poehali.dev/files/a946b1e8-dab0-47ca-9c1c-713f1e89dfb3.jpg",
+    description: `Состав: ${I.RICE}, ${I.NORI}, ${I.CUCUMBER}`,
+    weight: 100,
     vegetarian: true,
-    tags: ["maki", "vegetarian"],
+  },
+  {
+    id: 1017,
+    name: "Маки с Крабом",
+    price: 230,
+    image: "https://cdn.poehali.dev/files/56da8c94-7158-4294-8606-412d4f3ddc5b.jpg",
+    description: `Состав: ${I.RICE}, ${I.NORI}, ${I.CRAB}`,
+    weight: 100,
+  },
+  {
+    id: 1018,
+    name: "Маки с Угрём",
+    price: 280,
+    image: "https://cdn.poehali.dev/files/58648c53-72fb-465c-ae6e-326afba64841.jpg",
+    description: `Состав: ${I.RICE}, ${I.NORI}, ${I.EEL}, ${I.UNAGI_SAUCE}, ${I.SESAME}`,
+    weight: 100,
+  },
+  {
+    id: 1019,
+    name: "Маки с Авокадо",
+    price: 200,
+    image: "https://cdn.poehali.dev/files/f1dea82c-caf4-4cff-9b18-8834e7c95e66.jpg",
+    description: `Состав: ${I.RICE}, ${I.NORI}, ${I.AVOCADO}`,
+    weight: 100,
+    vegetarian: true,
   },
 ];
