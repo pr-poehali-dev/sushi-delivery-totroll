@@ -1,47 +1,43 @@
 
-import { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button";
-import Icon from "@/components/ui/icon";
+import React, { useState, useEffect } from 'react';
+import { Button } from '@/components/ui/button';
+import Icon from '@/components/ui/icon';
 
-const ScrollToTop = () => {
+const ScrollToTop: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
 
-  // Показывать кнопку только когда страница прокручена вниз
-  useEffect(() => {
-    const toggleVisibility = () => {
-      if (window.scrollY > 300) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
-      }
-    };
-
-    window.addEventListener("scroll", toggleVisibility);
-    return () => window.removeEventListener("scroll", toggleVisibility);
-  }, []);
+  // Показываем кнопку после прокрутки на 300px
+  const toggleVisibility = () => {
+    if (window.pageYOffset > 300) {
+      setIsVisible(true);
+    } else {
+      setIsVisible(false);
+    }
+  };
 
   // Функция прокрутки наверх
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth"
+      behavior: 'smooth'
     });
   };
 
+  useEffect(() => {
+    window.addEventListener('scroll', toggleVisibility);
+    return () => window.removeEventListener('scroll', toggleVisibility);
+  }, []);
+
   return (
-    <>
-      {isVisible && (
-        <Button
-          variant="outline"
-          size="icon"
-          className="fixed bottom-6 right-6 h-12 w-12 rounded-full bg-[#B255FF] text-white shadow-lg hover:bg-[#9F44E8] border-none animate-in fade-in duration-300 z-30"
-          onClick={scrollToTop}
-        >
-          <Icon name="ArrowUp" className="h-6 w-6" />
-          <span className="sr-only">Наверх</span>
-        </Button>
-      )}
-    </>
+    <div className={`fixed bottom-6 right-6 z-50 transition-opacity duration-300 ${isVisible ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
+      <Button 
+        onClick={scrollToTop} 
+        size="icon" 
+        className="rounded-full bg-[#B255FF] hover:bg-[#9440db] shadow-lg h-12 w-12"
+      >
+        <Icon name="ChevronUp" className="h-6 w-6" />
+      </Button>
+    </div>
   );
 };
 
